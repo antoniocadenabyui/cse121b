@@ -15,21 +15,29 @@ hobbies: [`woodworking`,`napping`,`fishing`],
 // Step 6: Add another property named placesLived with a value of an empty array
 placesLived: [
 // Step 7: Inside of the empty array above, add a new object with two properties: place and length and values of an empty string
-{place: ,
-length: , }
+
 // Step 8: For each property, add appropriate values as strings
 
 // Step 9: Add additional objects with the same properties for each place you've lived
-
+        {
+            place: `California`,
+            length: `28 years`, 
+        },
+        {
+            place: `Utah`,
+            length: `7 years`, 
+        }
+    ]
+};
 
 /* OUTPUT */
 
 // Step 1: Assign the value of the name property (of the object declared above) to the HTML <span> element with an ID of name
-
+document.querySelector(`#name`).innerHTML = info.name;
 // Step 2: Assign the value of the photo property as the src attribute of the HTML <img> element with an ID of photo
-
+document.querySelector(`#photo`).setAttribute(`src`, info.image);
 // Step 3: Assign the value of the name property as the alt attribute of the HTML <img> element with an ID of photo
-
+document.querySelector(`#photo`).setAttribute(`alt`, info.name);
 // Step 4: For each favorite food in the favoriteFoods property, create an HTML <li> element and place its value in the <li> element
 
 // Step 5: Append the <li> elements created above as children of the HTML <ul> element with an ID of favorite-foods
