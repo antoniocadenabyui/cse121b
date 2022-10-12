@@ -41,14 +41,14 @@ document.querySelector(`#photo`).setAttribute(`alt`, info.name);
 // Step 4: For each favorite food in the favoriteFoods property, create an HTML <li> element and place its value in the <li> element
 
 // Step 5: Append the <li> elements created above as children of the HTML <ul> element with an ID of favorite-foods
-for (i of info.favoriteFoods) {
+for (i of info.favoriteFoods) { //Needs to be for..of loop to display the value. For...in will display the index number.
    document.querySelector(`#favorite-foods`).innerHTML += '<li>' + i + '</li>';
 };
 
 // Step 6: Repeat Step 4 for each hobby in the hobbies property
 
 // Step 7: Repeat Step 5 using the HTML <ul> element with an ID of hobbies
-for (i of info.hobbies) {
+for (i of info.hobbies) {//Needs to be for..of loop to display the value. For...in will display the index number.
     document.querySelector(`#hobbies`).innerHTML +=`<li>` + i + `</li>`;
 };
 
