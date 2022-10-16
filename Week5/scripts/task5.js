@@ -73,8 +73,11 @@ document.querySelector('#message1').innerHTML = dayMessage;
 
 // Step 2: Assign the value of the second message variable to the HTML element with an ID of message2
 document.querySelector('#message2').innerHTML = displayWeekday;
+
+
 /* FETCH */
 // Step 1: Declare a global empty array variable to store a list of temples
+let templeArray = [];
 
 // Step 2: Declare a function named output that accepts a list of temples as an array argument and does the following for each temple:
 // - Creates an HTML <article> element
@@ -84,21 +87,68 @@ document.querySelector('#message2').innerHTML = displayWeekday;
 // - Creates an HTML <img> element and add the temple's imageUrl property to the src attribute and the temple's templeName property to the alt attribute
 // - Appends the <h3> element, the two <h4> elements, and the <img> element to the <article> element as children
 // - Appends the <article> element to the HTML element with an ID of temples
+//function 
+const output = (templeArray) => {
+    templeArray.forEach(temple => {
+    const newArticle = document.createElement('article');
+    const templeName = document.createElement('h3');
+        templeName.textContent = temple.templeName;
+    const location = document.createElement('h4');
+        location.textContent = temple.location
+    const dedicated = document.createElement('h4');
+        dedicated.textContent = temple.dedicated
+    const imageUrl = document.createElement('img');
+        imageUrl.setAttribute('src', temple.imageUrl);
+        imageUrl.setAttribute('alt', temple.templeName);
+
+    newArticle.append(templeName);
+    newArticle.append(location);
+    newArticle.append(dedicated);
+    newArticle.append(imageUrl);
+
+    document.querySelector('#temples').appendChild(newArticle); 
+    });
+};
 
 // Step 3: Create another function called getTemples. Make it an async function.
 // Step 4: In the function, using the built-in fetch method, call this absolute URL: 'https://byui-cse.github.io/cse121b-course/week05/temples.json'. Create a variable to hold the response from your fetch. You should have the program wait on this line until it finishes.
 // Step 5: Convert your fetch response into a Javascript object ( hint: .json() ). Store this in the templeList variable you declared earlier (Step 1). Make sure the the execution of the code waits here as well until it finishes.
 // Step 6: Finally, call the output function and pass it the list of temples. Execute your getTemples function to make sure it works correctly.
 
-// Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
+async function getTemples() {
+    const url = "https://byui-cse.github.io/cse121b-course/week05/temples.json";
+    const response = await fetch(url); 
+        const data = await response.json(); 
+        templeArray[data];
+        output(templeArray);
+   /* if (response.ok){
+    }*/
+};
+/*
+function output (data){
+    results = data;
+    const html = '<h2>${data.templeName}</h2>'
+};
+*/
+getTemples();
 
+// Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
+function reset (){
+document.querySelector('#temples').innerHTML = "";
+};
 // Step 8: Declare a function named sortBy that does the following:
 // - Calls the reset function
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
 // - Calls the output function passing in the sorted list of temples
+function sortBy (){
+    reset();
+    const templeNameAscending = temples.sort();
+    const templeNameDescending = temples.reverse();
+
+};
 
 // Step 9: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
-
+document.querySelector('#sortBy').addEventListener('change', sortBy);
 /* STRETCH */
 
 // Consider adding a "Filter by" feature that allows users to filter the list of temples
