@@ -9,61 +9,70 @@ let newDate = new Date();
 // Step 3: Using the variable declared in Step 1, assign the value of the variable declared in Step 2 to the day of the week ( hint: getDay() )
 let getDayOfWeek = newDate.getDay();
 // Step 4: Declare a variable to hold a message that will be displayed
-let weekend = 'Woohoo!  It is the weekend!';
-let weekday = 'Hang in there!'
+//let weekend = 'Woohoo!  It is the weekend!';
+//let weekday = 'Hang in there!';
+let dayMessage;
 // Step 5: Using an if statement, if the day of the week is a weekday (i.e. Monday - Friday), set the message variable to the string 'Hang in there!'
 if (newDate < 1 && newDate > 5 ){
-    console.log(weekday)
+    //console.log(weekday)
+    dayMessage = "Woohoo!  It is the weekend!";
 }
 // Step 6: Using an else statement, set the message variable to 'Woohoo!  It is the weekend!'
 else{
-    console.log(weekend)
+    //console.log(weekend)
+    dayMessage = "Hang in there!";
 };
 /* SWITCH, CASE, BREAK */
 
 // Step 1: Declare a new variable to hold another message
-let weekDayList = ['Sunday','Monday','Tuesday','Wednesday','Thrusday','Friday','Saturday']
+//let weekDayList = ['Sunday','Monday','Tuesday','Wednesday','Thrusday','Friday','Saturday']
+let displayWeekday;
 
 // Step 2: Use switch, case and break to set the message variable to the day of the week as a string (e.g. Sunday, Monday, etc.) using the day of week variable declared in Step 2 above
-
-let weekDayList = ['Sunday','Monday','Tuesday','Wednesday','Thrusday','Friday','Saturday']
 
 switch (getDayOfWeek){
     case 0:
     getDayOfWeek = 0
-    console.log(weekDayList[getDayOfWeek]);
+    displayWeekday = "Sunday";
+    //console.log(weekDayList[getDayOfWeek]);
     break;
     case 1:
     getDayOfWeek = 1
-    console.log(weekDayList[getDayOfWeek]);
+    displayWeekday = "Monday";
+    //console.log(weekDayList[getDayOfWeek]);
     break;
     case 2:
     getDayOfWeek = 2
-    console.log(weekDayList[getDayOfWeek]);
+    displayWeekday = "Tuesday";
+    //console.log(weekDayList[getDayOfWeek]);
     break;
     case 3:
     getDayOfWeek = 3
-    console.log(weekDayList[getDayOfWeek]);
+    displayWeekday = "Wednesday";
+    //console.log(weekDayList[getDayOfWeek]);
     break;
     case 4:
     getDayOfWeek = 4
-    console.log(weekDayList[getDayOfWeek]);
+    displayWeekday = "Thursday";
+    //console.log(weekDayList[getDayOfWeek]);
     break;
     case 5:
     getDayOfWeek = 5
-    console.log(weekDayList[getDayOfWeek]);
+    displayWeekday = "Friday";
+    //console.log(weekDayList[getDayOfWeek]);
     break;
     case 6:
     getDayOfWeek = 6
-    console.log(weekDayList[getDayOfWeek]);
+    displayWeekday = "Saturday";
+    //console.log(weekDayList[getDayOfWeek]);
 }
 /* OUTPUT */
 
 // Step 1: Assign the value of the first message variable to the HTML element with an ID of message1
-
+document.querySelector('#message1').innerHTML = dayMessage;
 
 // Step 2: Assign the value of the second message variable to the HTML element with an ID of message2
-
+document.querySelector('#message2').innerHTML = displayWeekday;
 /* FETCH */
 // Step 1: Declare a global empty array variable to store a list of temples
 
