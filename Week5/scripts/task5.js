@@ -3,26 +3,64 @@
 /* IF/ELSE IF */
 
 // Step 1: Declare and initialize a new variable to hold the current date
-
+let newDate = new Date();
 // Step 2: Declare another variable to hold the day of the week
 
 // Step 3: Using the variable declared in Step 1, assign the value of the variable declared in Step 2 to the day of the week ( hint: getDay() )
-
+let getDayOfWeek = newDate.getDay();
 // Step 4: Declare a variable to hold a message that will be displayed
-
+let weekend = 'Woohoo!  It is the weekend!';
+let weekday = 'Hang in there!'
 // Step 5: Using an if statement, if the day of the week is a weekday (i.e. Monday - Friday), set the message variable to the string 'Hang in there!'
-
+if (newDate < 1 && newDate > 5 ){
+    console.log(weekday)
+}
 // Step 6: Using an else statement, set the message variable to 'Woohoo!  It is the weekend!'
-
+else{
+    console.log(weekend)
+};
 /* SWITCH, CASE, BREAK */
 
 // Step 1: Declare a new variable to hold another message
+let weekDayList = ['Sunday','Monday','Tuesday','Wednesday','Thrusday','Friday','Saturday']
 
 // Step 2: Use switch, case and break to set the message variable to the day of the week as a string (e.g. Sunday, Monday, etc.) using the day of week variable declared in Step 2 above
 
+let weekDayList = ['Sunday','Monday','Tuesday','Wednesday','Thrusday','Friday','Saturday']
+
+switch (getDayOfWeek){
+    case 0:
+    getDayOfWeek = 0
+    console.log(weekDayList[getDayOfWeek]);
+    break;
+    case 1:
+    getDayOfWeek = 1
+    console.log(weekDayList[getDayOfWeek]);
+    break;
+    case 2:
+    getDayOfWeek = 2
+    console.log(weekDayList[getDayOfWeek]);
+    break;
+    case 3:
+    getDayOfWeek = 3
+    console.log(weekDayList[getDayOfWeek]);
+    break;
+    case 4:
+    getDayOfWeek = 4
+    console.log(weekDayList[getDayOfWeek]);
+    break;
+    case 5:
+    getDayOfWeek = 5
+    console.log(weekDayList[getDayOfWeek]);
+    break;
+    case 6:
+    getDayOfWeek = 6
+    console.log(weekDayList[getDayOfWeek]);
+}
 /* OUTPUT */
 
 // Step 1: Assign the value of the first message variable to the HTML element with an ID of message1
+
 
 // Step 2: Assign the value of the second message variable to the HTML element with an ID of message2
 
