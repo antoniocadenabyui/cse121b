@@ -61,7 +61,7 @@ for (i of test) {
 }
 */
 info.placesLived.forEach((placesLived) => {
-    let test  =document.createElement('dt');
+    let test = document.createElement('dt');
     test.textContent = placesLived.place;
 
     let time = document.createElement('dd');
