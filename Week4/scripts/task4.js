@@ -54,6 +54,24 @@ for (i of info.hobbies) {//Needs to be for..of loop to display the value. For...
 
 // Step 8: For each object in the <em>placesLived</em> property:
 // - Create an HTML <dt> element and put its place property in the <dt> element
+/* //Im getting some output
+let test = info.placesLived
+for (i of test) {
+    document.querySelector(`#places-lived`).innerHTML +=`<dt>` + i + `</dt>`;
+}
+*/
+info.placesLived.forEach((placesLived) => {
+    let test  =document.createElement('dt');
+    test.textContent = placesLived.place;
+
+    let time = document.createElement('dd');
+    time.textContent = placesLived.length;
+
+    document.querySelector('#places-lived').appendChild(test);
+    document.querySelector('#places-lived').appendChild(time);
+})
+
 // - Create an HTML <dd> element and put its length property in the <dd> element
+
 
 // Step 9: Append the HTML <dt> and <dd> elements created above to the HTML <dl> element with an ID of places-lived
