@@ -13,14 +13,14 @@ let getDayOfWeek = newDate.getDay();
 //let weekday = 'Hang in there!';
 let dayMessage;
 // Step 5: Using an if statement, if the day of the week is a weekday (i.e. Monday - Friday), set the message variable to the string 'Hang in there!'
-if (newDate < 1 && newDate > 5 ){
+if (newDate < 0 || newDate > 5 ){
     //console.log(weekday)
-    dayMessage = "Woohoo!  It is the weekend!";
+    dayMessage = "Hang in there!";
 }
 // Step 6: Using an else statement, set the message variable to 'Woohoo!  It is the weekend!'
 else{
     //console.log(weekend)
-    dayMessage = "Hang in there!";
+    dayMessage = "Woohoo!  It is the weekend!";
 };
 /* SWITCH, CASE, BREAK */
 
@@ -32,37 +32,37 @@ let displayWeekday;
 
 switch (getDayOfWeek){
     case 0:
-    getDayOfWeek = 0
+    //getDayOfWeek = 0
     displayWeekday = "Sunday";
     //console.log(weekDayList[getDayOfWeek]);
     break;
     case 1:
-    getDayOfWeek = 1
+    //getDayOfWeek = 1
     displayWeekday = "Monday";
     //console.log(weekDayList[getDayOfWeek]);
     break;
     case 2:
-    getDayOfWeek = 2
+    //getDayOfWeek = 2
     displayWeekday = "Tuesday";
     //console.log(weekDayList[getDayOfWeek]);
     break;
     case 3:
-    getDayOfWeek = 3
+    //getDayOfWeek = 3
     displayWeekday = "Wednesday";
     //console.log(weekDayList[getDayOfWeek]);
     break;
     case 4:
-    getDayOfWeek = 4
+    //getDayOfWeek = 4
     displayWeekday = "Thursday";
     //console.log(weekDayList[getDayOfWeek]);
     break;
     case 5:
-    getDayOfWeek = 5
+    //getDayOfWeek = 5
     displayWeekday = "Friday";
     //console.log(weekDayList[getDayOfWeek]);
     break;
     case 6:
-    getDayOfWeek = 6
+    //getDayOfWeek = 6
     displayWeekday = "Saturday";
     //console.log(weekDayList[getDayOfWeek]);
 }
@@ -118,7 +118,7 @@ const output = (templeArray) => {
 async function getTemples() {
     const url = "https://byui-cse.github.io/cse121b-course/week05/temples.json";
     const response = await fetch(url); 
-        const data = await response.json(); 
+        templeArray = await response.json(); 
         templeArray[data];
         output(templeArray);
    /* if (response.ok){
@@ -142,8 +142,8 @@ document.querySelector('#temples').innerHTML = "";
 // - Calls the output function passing in the sorted list of temples
 function sortBy (){
     reset();
-    const templeNameAscending = temples.sort();
-    const templeNameDescending = temples.reverse();
+    const templeNameAscending = templeArray.sort();
+    const templeNameDescending = templeArray.reverse();
 
 };
 
