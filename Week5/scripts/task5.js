@@ -117,12 +117,14 @@ const output = (templeArray) => {
 
 async function getTemples() {
     const url = "https://byui-cse.github.io/cse121b-course/week05/temples.json";
-    const response = await fetch(url); 
+    const response = await fetch(url);  
+    if (response.ok){
         templeArray = await response.json(); 
-        templeArray[data];
         output(templeArray);
-   /* if (response.ok){
-    }*/
+    }
+    else{
+        console.log("Error downloading")
+    }
 };
 /*
 function output (data){
@@ -140,6 +142,7 @@ document.querySelector('#temples').innerHTML = "";
 // - Calls the reset function
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
 // - Calls the output function passing in the sorted list of temples
+
 function sortBy (){
     reset();
     const templeNameAscending = templeArray.sort();
