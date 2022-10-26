@@ -1,4 +1,4 @@
-const url = "https://pokeapi.co/api/v2/pokemon/ditto";
+const url = "https://pokeapi.co/api/v2/pokemon/ditto"; //  <------ Ditto
 const urlList = "https://pokeapi.co/api/v2/pokemon";
 let results = null;
 

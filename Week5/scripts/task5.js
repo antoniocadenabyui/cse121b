@@ -122,9 +122,6 @@ async function getTemples() {
         templeArray = await response.json(); 
         output(templeArray);
     }
-    else{
-        console.log("Error downloading")
-    }
 };
 /*
 function output (data){
@@ -138,17 +135,44 @@ getTemples();
 function reset (){
 document.querySelector('#temples').innerHTML = "";
 };
+
+const sortBy =() => {
+
+    reset ();
+
+    let filter = document.querySelector('#sortBy').value;
+
+    switch(filter) {
+        case "templeNameAscending":
+            output(
+                //
+                templeArray.sort((temple1, temple2) => {
+                let templeName1 = temple1.templeName.toLowerCase();
+                let templeName2 = temple2.templeName.toLowerCase();
+                if (templeName1 < templeName2) return -1;
+                else if (templeName1 > templeName2) return 1;
+                else return 0;
+                })
+            );
+            break;
+        case "templeNameDescending":
+            output(
+                templeArray.sort((temple1, temple2) =>{
+                    let templeName1 = temple1.templeName.toLowerCase();
+                    let templeName2 = temple2.templeName.toLowerCase();
+                    if (templeName1 > templeName2) return -1;
+                    else if (templeName1 < templeName2) return 1;
+                    else return 0;    
+                })
+            );
+            break;
+    }
+
+};
 // Step 8: Declare a function named sortBy that does the following:
 // - Calls the reset function
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
 // - Calls the output function passing in the sorted list of temples
-
-function sortBy (){
-    reset();
-    const templeNameAscending = templeArray.sort();
-    const templeNameDescending = templeArray.reverse();
-
-};
 
 // Step 9: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
 document.querySelector('#sortBy').addEventListener('change', sortBy);
